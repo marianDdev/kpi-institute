@@ -18,9 +18,10 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name' => fake()->firstName(),
-            'flast_name' => fake()->lastName(),
-            'email' => fake()->unique()->safeEmail(),
+            'is_admin' => true,
+            'first_name' => 'Alex',
+            'last_name' => 'Podariu',
+            'email' => 'alex.podariu@kpiinstitute.com',
             'prefix' => '0040',
             'phone' => fake()->phoneNumber(),
             'company' => fake()->company(),
