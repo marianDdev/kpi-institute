@@ -780,6 +780,7 @@
             }
         </style>
         @vite(['resources/css/app.css','resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="antialiased">
         @include('partials._nav')
@@ -788,5 +789,7 @@
             @include('partials._side_hero')
             @include('partials._form')
         </div>
+        @livewireScripts
     </body>
+
 </html>
