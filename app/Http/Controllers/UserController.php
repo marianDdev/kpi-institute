@@ -4,15 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
-use Illuminate\Http\JsonResponse;
 
 class UserController extends Controller
 {
-    public function store(StoreUserRequest $request): JsonResponse
+    public function store(StoreUserRequest $request)
     {
         $validated = $request->validated();
-        User::create($validated);
+        $user = User::create($validated);
 
-        return response()->json('User successfully crested', 201);
+        if (!is_null($user)) {
+            $path = public_path() . '/brochure.pdf';
+            $headers = array(
+                'Content-Type: application/pdf',
+            );
+            return response()->download($path, 'TKI-Membership-Brochure.pdf', $headers);
+        }
+
+        return redirect('/')->with('status', 'Something went wrong. try again');
     }
 }
