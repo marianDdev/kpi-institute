@@ -19,7 +19,7 @@ class StoreUserRequest extends FormRequest
             'is_admin' => ['nullable', 'boolean'],
             'email' => ['required', 'email', 'unique:users'],
             'prefix' => ['required', 'string'],
-            'phone' => ['required', 'numeric'],
+            'phone' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/','min:10'],
             'company' => ['nullable', 'string'],
             'country' => ['required', 'string'],
         ];
