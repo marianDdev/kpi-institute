@@ -13,9 +13,10 @@ class UserController extends Controller
     public function store(
         StoreUserRequest $request,
         FileServiceInterface $fileService
-    ): BinaryFileResponse|RedirectResponse {
+    ): BinaryFileResponse|RedirectResponse
+    {
         $validated = $request->validated();
-        $user = User::create($validated);
+        $user      = User::create($validated);
 
         if (is_null($user)) {
             return redirect('/')->with(

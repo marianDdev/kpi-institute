@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Lwwcas\LaravelCountries\Database\Seeders\LcDatabaseSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,5 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory()->create();
+        $this->call(LcDatabaseSeeder::class);
     }
 }
