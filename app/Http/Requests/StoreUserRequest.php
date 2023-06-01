@@ -18,7 +18,7 @@ class StoreUserRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:256'],
             'is_admin' => ['nullable', 'boolean'],
             'email' => ['required', 'email', ''],
-            'prefix' => ['required', 'numeric'],
+            'prefix' => ['required', 'string'],
             'phone' => ['required', 'numeric'],
             'company' => ['nullable', 'string'],
             'country' => ['required', 'string'],
