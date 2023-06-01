@@ -4,13 +4,15 @@ This project is developed with Laravel, Tailwind CSS and Livewire.
 
 For an easier binding between a country and it's related counntry phone prefix I used [Laravel-Countries](https://github.com/lwwcas/laravel-countries), a package that contains everything you need to start a new project and have all countries, information and translations on hand. And all this optimized for Laravel 8, 9 and now 10.
 
-Follow this steps to clone the project locally.
+Follow this steps to run this project locally.
 - Run git clone https://github.com/marianDdev/kpi-institute.git
 - Run composer install
 - Run cp .env.example .env
 - Add your own database credentials in .env file
 - Run php artisan key:generate
 - Run php artisan migrate && php artisan db:seed
+- Run npm install
+- Run npm run dev
 
 After successfully submitting the data from the form:
 - a new user is persisted in the database
